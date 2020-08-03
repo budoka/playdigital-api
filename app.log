@@ -1,0 +1,20 @@
+2020-08-03 16:20:52.159 - [DEBUG]: Connecting to databases...
+2020-08-03 16:20:53.943 - [DEBUG]: Connected to database: 'playdigital-api'.
+2020-08-03 16:20:56.843 - [INFO]: App running at port: 3000.
+2020-08-03 16:20:56.844 - [DEBUG]: Api documentation: http://localhost:3000/doc
+2020-08-03 16:20:56.844 - [DEBUG]: 
+.
+.
+.
+2020-08-03 16:21:05.758 - [INFO]: Getting new token.
+2020-08-03 16:21:15.817 - [DEBUG]: GET /api/cryptocurrencies/marketcap from ::1 | Response: 304 - Not Modified
+2020-08-03 16:21:28.432 - [DEBUG]: GET /api/cryptocurrencies/assets from ::1 | Response: 200 - OK
+2020-08-03 16:21:38.310 - [ERROR]: {
+  "httpCode": 401,
+  "name": "UnauthorizedError",
+  "message": "Authorization header is missing."
+}
+2020-08-03 16:21:38.311 - [DEBUG]: GET /api/cryptocurrencies from ::1 | Response: 401 - Unauthorized
+2020-08-03 16:21:53.373 - [DEBUG]: POST /api/users/login from ::1 | Response: 200 - OK
+2020-08-03 16:22:13.818 - [DEBUG]: GET /api/cryptocurrencies from ::1 | Response: 200 - OK
+2020-08-03 16:22:26.275 - [DEBUG]: GET /api/cryptocurrencies from ::1 | Response: 200 - OK

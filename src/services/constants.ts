@@ -1,9 +1,10 @@
 import { IExternalAPI } from './interface';
+import { getVar } from 'src/utils/enviroment';
 
 export const externalApis: IExternalAPI[] = [
   {
     name: 'bravenewcoin',
-    domain: 'https://bravenewcoin.p.rapidapi.com',
+    domain: `https://${getVar('RAPID_API_HOST')}`,
     paths: [
       {
         methodName: 'GetToken',
@@ -11,8 +12,8 @@ export const externalApis: IExternalAPI[] = [
         path: 'oauth/token',
         headers: {
           'content-type': 'application/json',
-          'x-rapidapi-host': 'bravenewcoin.p.rapidapi.com',
-          'x-rapidapi-key': 'bb61f90a8fmsh7105b10221edb33p1ae5c3jsn338e62640f9e',
+          'x-rapidapi-host': getVar('RAPID_API_HOST'),
+          'x-rapidapi-key': getVar('RAPID_API_KEY'),
           accept: 'application/json',
           useQueryString: true,
         },
@@ -28,8 +29,8 @@ export const externalApis: IExternalAPI[] = [
         path: 'market',
         headers: {
           'content-type': 'application/octet-stream',
-          'x-rapidapi-host': 'bravenewcoin.p.rapidapi.com',
-          'x-rapidapi-key': 'bb61f90a8fmsh7105b10221edb33p1ae5c3jsn338e62640f9e',
+          'x-rapidapi-host': getVar('RAPID_API_HOST'),
+          'x-rapidapi-key': getVar('RAPID_API_KEY'),
           useQueryString: true,
         },
       },
@@ -39,8 +40,8 @@ export const externalApis: IExternalAPI[] = [
         path: 'market-cap',
         headers: {
           'content-type': 'application/octet-stream',
-          'x-rapidapi-host': 'bravenewcoin.p.rapidapi.com',
-          'x-rapidapi-key': 'bb61f90a8fmsh7105b10221edb33p1ae5c3jsn338e62640f9e',
+          'x-rapidapi-host': getVar('RAPID_API_HOST'),
+          'x-rapidapi-key': getVar('RAPID_API_KEY'),
           useQueryString: true,
         },
       },
@@ -50,8 +51,8 @@ export const externalApis: IExternalAPI[] = [
         path: 'asset',
         headers: {
           'content-type': 'application/octet-stream',
-          'x-rapidapi-host': 'bravenewcoin.p.rapidapi.com',
-          'x-rapidapi-key': 'bb61f90a8fmsh7105b10221edb33p1ae5c3jsn338e62640f9e',
+          'x-rapidapi-host': getVar('RAPID_API_HOST'),
+          'x-rapidapi-key': getVar('RAPID_API_KEY'),
           useQueryString: true,
         },
       },
