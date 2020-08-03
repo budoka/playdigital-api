@@ -1,4 +1,4 @@
-¿Cómo usar?
+### ¿Cómo usar?
 
 1) Clonar repositorio: ```git clone https://github.com/budoka/playdigital-api.git```
 2) Instalar modulos: ```yarn``` (dentro de la carpeta root del proyecto)
@@ -6,7 +6,7 @@
 4) Ejecutar aplicación modo producción: ```yarn ts-build-run```
 5) Ejecutar tests: ```yarn test```
 
-Detalles de la API:
+### Detalles de la API:
 
 - La API es un wrapper de la API BraveNewCoin (https://rapidapi.com/BraveNewCoin/api/bravenewcoin). 
 
