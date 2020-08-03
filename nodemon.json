@@ -1,0 +1,6 @@
+{
+  "watch": ["src"],
+  "exec": "ts-node-dev -r tsconfig-paths/register src && eslint '*/**/*.{js,ts}' --quiet --fix",
+  "ext": "ts",
+  "ignore": ["**/*.test.ts", "**/*.spec.ts", ".git", "node_modules"]
+}

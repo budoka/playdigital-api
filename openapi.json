@@ -1,0 +1,431 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Play Digital API",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Facundo Vázquez",
+      "email": "facundoxvazquez@gmail.com"
+    },
+    "license": {
+      "name": "MIT"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000/api/"
+    }
+  ],
+  "paths": {
+    "/cryptocurrencies": {
+      "get": {
+        "operationId": "CryptocurrencyController.getAll",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "sortByPrice",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "ASC",
+                "DESC"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {}
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "Get all",
+        "tags": [
+          "Cryptocurrency"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/cryptocurrencies/assets": {
+      "get": {
+        "operationId": "CryptocurrencyController.getAssets",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {}
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "Get assets",
+        "tags": [
+          "Cryptocurrency"
+        ]
+      }
+    },
+    "/cryptocurrencies/marketcap": {
+      "get": {
+        "operationId": "CryptocurrencyController.getMarketCap",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "assetId",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "percentChange",
+            "required": false,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {}
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "Get market cap",
+        "tags": [
+          "Cryptocurrency"
+        ]
+      }
+    },
+    "/currencies": {
+      "get": {
+        "operationId": "CurrencyController.getAll",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {}
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "Get all",
+        "tags": [
+          "Currency"
+        ]
+      }
+    },
+    "/currencies/{symbol}": {
+      "get": {
+        "operationId": "CurrencyController.getOne",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "symbol",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {}
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "Get one",
+        "tags": [
+          "Currency"
+        ]
+      }
+    },
+    "/users": {
+      "get": {
+        "operationId": "UserController.getAll",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {}
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "Get all",
+        "tags": [
+          "User"
+        ]
+      },
+      "post": {
+        "operationId": "UserController.add",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              }
+            }
+          },
+          "description": "User",
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {}
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "Add",
+        "tags": [
+          "User"
+        ]
+      }
+    },
+    "/users/{username}": {
+      "get": {
+        "operationId": "UserController.getOne",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {}
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "Get one",
+        "tags": [
+          "User"
+        ]
+      },
+      "put": {
+        "operationId": "UserController.update",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              }
+            }
+          },
+          "description": "User",
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {}
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "Update",
+        "tags": [
+          "User"
+        ]
+      },
+      "delete": {
+        "operationId": "UserController.remove",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {}
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "Remove",
+        "tags": [
+          "User"
+        ]
+      }
+    },
+    "/users/login": {
+      "post": {
+        "operationId": "UserController.login",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserLogin"
+              }
+            }
+          },
+          "description": "User",
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {}
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "Login",
+        "tags": [
+          "User"
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Currency": {
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "symbol": {
+            "minLength": 3,
+            "maxLength": 3,
+            "type": "string"
+          }
+        },
+        "type": "object",
+        "required": [
+          "name",
+          "symbol"
+        ]
+      },
+      "User": {
+        "properties": {
+          "firstname": {
+            "type": "string"
+          },
+          "lastname": {
+            "type": "string"
+          },
+          "username": {
+            "type": "string"
+          },
+          "password": {
+            "pattern": "^[0-9a-zA-Z]+$",
+            "type": "string",
+            "minLength": 8
+          },
+          "currencyId": {
+            "format": "uuid",
+            "type": "string"
+          }
+        },
+        "type": "object",
+        "required": [
+          "firstname",
+          "lastname",
+          "username",
+          "password",
+          "currencyId"
+        ]
+      },
+      "Cryptocurrency": {
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "symbol": {
+            "minLength": 3,
+            "maxLength": 3,
+            "type": "string"
+          },
+          "price": {
+            "format": "currency",
+            "type": "string"
+          },
+          "url": {
+            "format": "url",
+            "type": "string"
+          }
+        },
+        "type": "object",
+        "required": [
+          "name",
+          "symbol",
+          "price",
+          "url"
+        ]
+      },
+      "UserLogin": {
+        "properties": {
+          "username": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        },
+        "type": "object",
+        "required": [
+          "username",
+          "password"
+        ]
+      },
+      "CryptocurrencyUser": {
+        "properties": {
+          "cryptocurrency": {
+            "type": "string"
+          },
+          "username": {
+            "type": "string"
+          }
+        },
+        "type": "object",
+        "required": [
+          "cryptocurrency",
+          "username"
+        ]
+      }
+    },
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  },
+  "externalDocs": {
+    "description": "Swagger JSON",
+    "url": "http://localhost:3000/swagger"
+  }
+}

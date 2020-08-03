@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "allowJs": true,
+    "skipLibCheck": false,
+    "esModuleInterop": true, // false
+    "allowSyntheticDefaultImports": true, // false
+    "strict": true,
+    "strictPropertyInitialization": false,
+    "declaration": true,
+    "downlevelIteration": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    //"isolatedModules": true,
+    "noEmit": false,
+    "jsx": "react",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "removeComments": true,
+    //"typeRoots": ["../node_modules/@types"],
+    //"types": ["node", "express"],
+    "outDir": "./dist",
+    "baseUrl": ".",
+    "paths": {
+      "src": ["/src/*"]
+    }
+  },
+  //"lib": ["es2015"],
+  "include": ["src", "jest.setup.ts", "jest.config.ts"]
+  //"exclude": ["node_modules", "dist"]
+}
