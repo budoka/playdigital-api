@@ -2,8 +2,8 @@
 
 1) Clonar repositorio: ```git clone https://github.com/budoka/playdigital-api.git```
 2) Instalar modulos: ```yarn``` (dentro de la carpeta root del proyecto)
-3) Ejecutar aplicación modo desarrollo: ```yarn start```
-4) Ejecutar aplicación modo producción: ```yarn ts-build-run```
+3) Ejecutar aplicación en modo desarrollo: ```yarn start```
+4) Ejecutar aplicación en modo producción: ```yarn ts-build-run```
 5) Ejecutar tests: ```yarn test```
 
 ### Detalles de la API:
@@ -11,7 +11,7 @@
 - La API es un wrapper de la API BraveNewCoin (https://rapidapi.com/BraveNewCoin/api/bravenewcoin). 
 
 - La configuración del ambiente (apikey de la API BraveNewCoin, puerto de la app, puerto y hostname de la bbdd, etc) están en el archivo .env. 
-- Funciona con MySQL (probado en 8.0.19).
+- Funciona con MySQL (probado en 8.0.19). **Únicamente se requiere tener la instancia corriendo. La base de datos se genera solo (sí se ejecuta la app en modo desarrolo ```yarn start```)**
 - Documentación y testeo: http://localhost:3000/doc (puerto por defecto).
 - Swagger file: http://localhost:3000/swagger (puerto por defecto).
 
