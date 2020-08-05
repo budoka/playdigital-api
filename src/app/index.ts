@@ -17,7 +17,6 @@ export class App {
   static readonly enviroment: string = getEnvironment();
 
   readonly app: express.Application;
-  readonly host: string;
   readonly port: number;
   readonly specs: Partial<OpenAPIObject>;
 
