@@ -1,5 +1,5 @@
-import { createLogger, transports, format, addColors } from 'winston';
-import { LoggerLevels, Levels } from './types';
+import { addColors, createLogger, format, transports } from 'winston';
+import { Levels, LoggerLevels } from './types';
 
 const customFormat = format.printf(({ level, message, timestamp }) => {
   return `${timestamp} - [${level.toUpperCase()}]: ${message}`;

@@ -1,5 +1,3 @@
-import { Sort } from 'src/constants/enums';
-
 /**
  * Check if the value is a string.
  * @param value Value or variable name.

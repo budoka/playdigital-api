@@ -1,12 +1,9 @@
 import express from 'express';
 import { Get, JsonController, NotFoundError, Param, Req, Res } from 'routing-controllers';
-import { OpenAPI, ResponseSchema } from 'routing-controllers-openapi';
 import Currency from 'src/models/entities/currency.entity';
-
 import { getVar } from 'src/utils/enviroment';
 import { getConnectionManager, Repository } from 'typeorm';
 import { EntityFromBody } from 'typeorm-routing-controllers-extensions';
-import { Authorize } from 'src/auth/decorators/authorize';
 
 const database = getVar('DATABASE_NAME');
 const BodyToEntity = () => EntityFromBody({ connection: database });

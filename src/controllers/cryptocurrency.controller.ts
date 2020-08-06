@@ -1,16 +1,16 @@
 import express from 'express';
 import _ from 'lodash';
-import { Get, JsonController, Param, QueryParam, Res, Req, NotFoundError } from 'routing-controllers';
+import { Get, JsonController, QueryParam, Req, Res } from 'routing-controllers';
 import { OpenAPI } from 'routing-controllers-openapi';
+import { Authorize } from 'src/auth/decorators/authorize';
 import { Sort } from 'src/constants/enums';
-import Cryptocurrency from 'src/models/entities/cryptocurrency.entity';
 import { ExternalAPIError } from 'src/exceptions';
+import Cryptocurrency from 'src/models/entities/cryptocurrency.entity';
 import { getAsset, getAssetTicker, getTokenFromBraveNewCoin } from 'src/services';
 import { ICryptocurrency, IExternalAPIToken, IRawDataAsset, IRawDataMarket } from 'src/services/interface';
 import { getVar } from 'src/utils/enviroment';
 import { compare } from 'src/utils/string';
 import { getConnectionManager, Repository } from 'typeorm';
-import { Authorize } from 'src/auth/decorators/authorize';
 
 const database = getVar('DATABASE_NAME');
 

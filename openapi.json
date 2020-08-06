@@ -27,7 +27,10 @@
             "required": false,
             "schema": {
               "type": "string",
-              "enum": ["ASC", "DESC"]
+              "enum": [
+                "ASC",
+                "DESC"
+              ]
             }
           }
         ],
@@ -40,7 +43,9 @@
           }
         },
         "summary": "Get all",
-        "tags": ["Cryptocurrency"],
+        "tags": [
+          "Cryptocurrency"
+        ],
         "security": [
           {
             "bearerAuth": []
@@ -60,7 +65,9 @@
           }
         },
         "summary": "Get assets",
-        "tags": ["Cryptocurrency"]
+        "tags": [
+          "Cryptocurrency"
+        ]
       }
     },
     "/cryptocurrencies/marketcap": {
@@ -93,7 +100,9 @@
           }
         },
         "summary": "Get market cap",
-        "tags": ["Cryptocurrency"]
+        "tags": [
+          "Cryptocurrency"
+        ]
       }
     },
     "/currencies": {
@@ -108,7 +117,9 @@
           }
         },
         "summary": "Get all",
-        "tags": ["Currency"]
+        "tags": [
+          "Currency"
+        ]
       }
     },
     "/currencies/{symbol}": {
@@ -133,7 +144,9 @@
           }
         },
         "summary": "Get one",
-        "tags": ["Currency"]
+        "tags": [
+          "Currency"
+        ]
       }
     },
     "/users": {
@@ -148,7 +161,9 @@
           }
         },
         "summary": "Get all",
-        "tags": ["User"]
+        "tags": [
+          "User"
+        ]
       },
       "post": {
         "operationId": "UserController.add",
@@ -172,7 +187,9 @@
           }
         },
         "summary": "Add",
-        "tags": ["User"]
+        "tags": [
+          "User"
+        ]
       }
     },
     "/users/{username}": {
@@ -197,7 +214,9 @@
           }
         },
         "summary": "Get one",
-        "tags": ["User"]
+        "tags": [
+          "User"
+        ]
       },
       "put": {
         "operationId": "UserController.update",
@@ -231,7 +250,9 @@
           }
         },
         "summary": "Update",
-        "tags": ["User"]
+        "tags": [
+          "User"
+        ]
       },
       "delete": {
         "operationId": "UserController.remove",
@@ -254,7 +275,9 @@
           }
         },
         "summary": "Remove",
-        "tags": ["User"]
+        "tags": [
+          "User"
+        ]
       }
     },
     "/users/login": {
@@ -280,7 +303,9 @@
           }
         },
         "summary": "Login",
-        "tags": ["User"]
+        "tags": [
+          "User"
+        ]
       }
     }
   },
@@ -298,7 +323,10 @@
           }
         },
         "type": "object",
-        "required": ["name", "symbol"]
+        "required": [
+          "name",
+          "symbol"
+        ]
       },
       "User": {
         "properties": {
@@ -322,7 +350,13 @@
           }
         },
         "type": "object",
-        "required": ["firstname", "lastname", "username", "password", "currencyId"]
+        "required": [
+          "firstname",
+          "lastname",
+          "username",
+          "password",
+          "currencyId"
+        ]
       },
       "Cryptocurrency": {
         "properties": {
@@ -344,7 +378,12 @@
           }
         },
         "type": "object",
-        "required": ["name", "symbol", "price", "url"]
+        "required": [
+          "name",
+          "symbol",
+          "price",
+          "url"
+        ]
       },
       "UserLogin": {
         "properties": {
@@ -356,7 +395,10 @@
           }
         },
         "type": "object",
-        "required": ["username", "password"]
+        "required": [
+          "username",
+          "password"
+        ]
       },
       "CryptocurrencyUser": {
         "properties": {
@@ -368,7 +410,10 @@
           }
         },
         "type": "object",
-        "required": ["cryptocurrency", "username"]
+        "required": [
+          "cryptocurrency",
+          "username"
+        ]
       }
     },
     "securitySchemes": {

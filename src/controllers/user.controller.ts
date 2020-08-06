@@ -18,9 +18,9 @@ import {
 } from 'routing-controllers';
 import { OpenAPI } from 'routing-controllers-openapi';
 import { ConflictError, UnprocessableEntityError } from 'src/exceptions';
-import { hashPassword, verifyPassword } from 'src/utils/crypto';
 import User from 'src/models/entities/user.entity';
 import { UserLogin } from 'src/models/schemas';
+import { hashPassword, verifyPassword } from 'src/utils/crypto';
 import { getConstraintErrorMessage } from 'src/utils/database';
 import { getVar } from 'src/utils/enviroment';
 import { getConnectionManager, Repository } from 'typeorm';

@@ -1,11 +1,8 @@
-import axios, { AxiosRequestConfig } from 'axios';
-import { getVar } from 'src/utils/enviroment';
-import { ObjectLiteral } from 'typeorm';
-import { externalApis } from './constants';
-import _ from 'lodash';
+import axios from 'axios';
 import { ExternalAPIError } from 'src/exceptions';
-import { getExternaAPIData } from 'src/utils/api';
 import logger, { Levels } from 'src/logger';
+import { getExternaAPIData } from 'src/utils/api';
+import { ObjectLiteral } from 'typeorm';
 
 export interface QueryParams {
   select?: string[];

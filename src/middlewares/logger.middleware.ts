@@ -1,5 +1,5 @@
 import express from 'express';
-import { Middleware, ExpressMiddlewareInterface } from 'routing-controllers';
+import { ExpressMiddlewareInterface, Middleware } from 'routing-controllers';
 import logger, { Levels } from 'src/logger';
 
 @Middleware({ type: 'after' })
