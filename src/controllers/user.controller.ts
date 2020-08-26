@@ -25,6 +25,7 @@ import { getConstraintErrorMessage } from 'src/utils/database';
 import { getVar } from 'src/utils/enviroment';
 import { getConnectionManager, Repository } from 'typeorm';
 import { EntityFromBody } from 'typeorm-routing-controllers-extensions';
+import { AuthMessage } from 'src/constants/enums';
 
 const database = getVar('DATABASE_NAME');
 const BodyToEntity = () => EntityFromBody({ connection: database });
@@ -143,7 +144,7 @@ export class UserController {
         throw new UnauthorizedError();
       }
     } catch (error) {
-      if (error instanceof UnauthorizedError) throw new UnauthorizedError('Invalid username or password.');
+      if (error instanceof UnauthorizedError) throw new UnauthorizedError(AuthMessage.INVALID_CREDENTIALS);
       else throw error;
     }
   }

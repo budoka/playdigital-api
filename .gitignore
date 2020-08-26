@@ -10,11 +10,9 @@
 /dist
 
 # misc
-*.lock
 *.rar
 *.zip
-*.DS_Store
-*.env.local
+*.7z
 *.log
 # *.env
 

@@ -1,24 +1,47 @@
 import dotenv from 'dotenv';
 import { EnviromentError } from 'src/exceptions';
+import { Dictionary } from 'src/constants/interfaces';
+import { parseValue } from './parse';
 
 dotenv.config();
 
+export interface EnvironmentData {
+  cache: Dictionary<any>;
+  env?: string;
+}
+
+export const environmentData: EnvironmentData = {
+  env: undefined,
+  cache: {},
+};
+
 /**
  * Get the environment variable.
- * @param variable Variable name
+ * The retrieved value is cached for a better performance.
+ * @param variableName Variable name
  */
-export function getVar(variable: string) {
-  if (process.env[variable]) {
-    return process.env[variable]!;
-  }
-  throw new EnviromentError(`Unable to get enviroment variable: '${variable}'`);
+export function getVar(variableName: string) {
+  if (!variableName) throw new EnviromentError(`Malformed environment variable name.`);
+
+  // Check if the variable is cached and return it.
+  if (environmentData.cache[variableName]) return environmentData.cache[variableName];
+
+  let value: string | number | boolean | undefined = process.env[variableName];
+
+  if (value === undefined) throw new EnviromentError(`Unable to get environment variable: '${variableName}'.`);
+
+  value = parseValue(value);
+
+  // Cache the value and return it.
+  return (environmentData.cache[variableName] = value);
 }
 
 /**
  * Get the environment name.
  */
 export function getEnvironment() {
-  return getVar('NODE_ENV').toLowerCase();
+  if (environmentData.env) return environmentData.env;
+  else return (environmentData.env = getVar('NODE_ENV').toLowerCase());
 }
 
 /**
@@ -39,5 +62,5 @@ export function isProduction() {
  * Check if the database log is enabled.
  */
 export function isDatabaseLogEnabled() {
-  return getVar('DATABASE_LOG').toLowerCase() === 'true';
+  return getVar('DATABASE_LOG');
 }

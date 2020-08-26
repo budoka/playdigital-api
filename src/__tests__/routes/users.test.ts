@@ -6,7 +6,7 @@ import { getVar } from 'src/utils/enviroment';
 import request from 'supertest';
 import { getConnectionManager } from 'typeorm';
 import { app } from '../../../jest.setup';
-import { RandomInteger } from 'src/utils/number';
+import { getRandomInteger } from 'src/utils/number';
 
 const application = app.app;
 
@@ -49,7 +49,7 @@ describe('/api', () => {
       const user = {
         firstname: 'Facundo',
         lastname: 'Vazquez',
-        username: `randomUser${RandomInteger(1, 10000)}`,
+        username: `randomUser${getRandomInteger(1, 10000)}`,
         password: `randomPassword`,
         currencyId: await repository.findOne({ symbol: 'ARS' }).then((currency) => currency?.id),
       };

@@ -1,12 +1,12 @@
-import 'reflect-metadata';
 import express from 'express';
 import { OpenAPIObject } from 'openapi3-ts';
+import 'reflect-metadata';
 import { App } from 'src/app';
 import { getVar } from 'src/utils/enviroment';
 
 const application = express();
 const hostname = 'localhost' || '192.168.0.49';
-const port = Number(getVar('PORT')) || 3009;
+const port = getVar('PORT') || 3009;
 
 // API Info
 const specs: Partial<OpenAPIObject> = {

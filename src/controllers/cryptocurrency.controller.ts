@@ -3,7 +3,7 @@ import _ from 'lodash';
 import { Get, JsonController, QueryParam, Req, Res } from 'routing-controllers';
 import { OpenAPI } from 'routing-controllers-openapi';
 import { Authorize } from 'src/auth/decorators/authorize';
-import { Sort } from 'src/constants/enums';
+import { Sort, JWTMessage } from 'src/constants/enums';
 import { ExternalAPIError } from 'src/exceptions';
 import Cryptocurrency from 'src/models/entities/cryptocurrency.entity';
 import { getAsset, getAssetTicker, getTokenFromBraveNewCoin } from 'src/services';
@@ -50,8 +50,8 @@ export class CryptocurrencyController {
     // Get second rawdata (market)
     const token = await this.getToken();
 
-    if (!token) throw new ExternalAPIError('Token is empty.');
-    if (token.expires_in <= 0) throw new ExternalAPIError('Token is expired.');
+    if (!token) throw new ExternalAPIError(JWTMessage.TOKEN_EMPTY);
+    if (token.expires_in <= 0) throw new ExternalAPIError(JWTMessage.TOKEN_EXPIRED);
 
     let market: IRawDataMarket[] = await getAssetTicker(token.access_token);
 
@@ -96,8 +96,8 @@ export class CryptocurrencyController {
     // Get rawdata (market)
     const token = await this.getToken();
 
-    if (!token) throw new ExternalAPIError('Token is empty.');
-    if (token.expires_in <= 0) throw new ExternalAPIError('Token is expired.');
+    if (!token) throw new ExternalAPIError(JWTMessage.TOKEN_EMPTY);
+    if (token.expires_in <= 0) throw new ExternalAPIError(JWTMessage.TOKEN_EXPIRED);
 
     let rawdata: IRawDataMarket[] = await getAssetTicker(token.access_token);
 

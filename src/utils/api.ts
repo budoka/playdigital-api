@@ -4,8 +4,8 @@ import { externalApis } from 'src/services/constants';
 
 /**
  * Get the data of an API from an array of APIs.
- * @param {!String} apiName API name.
- * @param {!String} methodName Method/path name.
+ * @param apiName API name.
+ * @param methodName Method/path name.
  */
 export function getExternaAPIData(apiName: string, methodName: string) {
   const api = _.find(externalApis, (api) => api.name === apiName);

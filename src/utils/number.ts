@@ -2,10 +2,10 @@ import { Sort } from 'src/constants/enums';
 
 /**
  * Generate a random number.
- * @param min Min value.
- * @param max Max value.
+ * @param min Min value (included).
+ * @param max Max value (included).
  */
-export function RandomInteger(min: number, max: number) {
+export function getRandomInteger(min: number, max: number) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
