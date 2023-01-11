@@ -26,7 +26,7 @@
   "dependencies": {
     "axios": "^0.19.2",
     "class-transformer": "^0.2.3",
-    "class-validator": "^0.12.2",
+    "class-validator": "^0.14.0",
     "class-validator-jsonschema": "^2.0.2",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
